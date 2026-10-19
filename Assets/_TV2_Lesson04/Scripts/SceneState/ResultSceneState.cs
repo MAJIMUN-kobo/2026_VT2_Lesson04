@@ -2,31 +2,26 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class ResultSceneState : IState
+public class ResultSceneState : BaseSceneState
 {
-    // === メンバー変数 === //
-    private SceneManager _sceneManager;
+    // === HUD設定 === //
+    public override string HudAddress { get; protected set; } = "Assets/_TV2_Lesson04/Prefab/ResultHUDCanvas_FullHD.prefab";
 
 
-    public void Enter() 
+    public override void Enter() 
     {
-        Debug.Log($"{GetType().Name} が始まります。");
-
-        // SceneManager を取得
-        _sceneManager = GameObject.FindAnyObjectByType<SceneManager>();
+        base.Enter();
     }
 
-    public void Execute() 
+
+    public override void Execute() 
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             // ResultSceneState へ遷移
             _sceneManager.ChangeScene(new TitleSceneState());
         }
-    }
 
-    public void Exit() 
-    {
-        Debug.Log($"{GetType().Name} を終了します。");
+        base.Execute();
     }
 }
