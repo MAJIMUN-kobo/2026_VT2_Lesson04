@@ -27,7 +27,7 @@ public abstract class BaseSceneState : IState
     // === Canvas 設定プロパティ === //
     // ヘッドアップディスプレイ（UI）のプレハブのアドレスを入力
     public abstract string HudAddress { get; protected set; }
-    private GameObject _hudCanvas;
+    protected GameObject _hudCanvas;
 
 
     public virtual void Enter()
