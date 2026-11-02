@@ -9,6 +9,9 @@ public class TitleSceneState : BaseSceneState
 
     private TitleHUDController _hudController;
     private int _score;
+    public int Score { get { return _score; } }
+    private int _maxScore = 100;
+    public int MaxScore { get { return _maxScore; } }
 
     public override void Enter()
     {
@@ -23,9 +26,9 @@ public class TitleSceneState : BaseSceneState
     }
 
 
-    public override void Execute() 
+    public override void Execute()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current.middleButton.wasPressedThisFrame)
         {
             // ゲーム画面に切り替える
             _sceneManager.ChangeScene(new GameSceneState());
@@ -38,5 +41,9 @@ public class TitleSceneState : BaseSceneState
     public void AddScore()
     {
         _score++;
+        if(_maxScore <= _score)
+        {
+            _maxScore += 100;
+        }
     }
 }

@@ -21,5 +21,7 @@ public class TitleHUDController
     private void OnClickButtonRequest()
     {
         _sceneState.AddScore();
+        _view.UpdateScoreText(_sceneState.Score);
+        _view.UpdateScoreSlider(_sceneState.Score, _sceneState.MaxScore);
     }
 }
