@@ -1,7 +1,10 @@
+
 # VT2_Lesson04
 ## 2026-11-02 Update.
 ### MVPでのUI制御
 - 管理されたUIを実際にMVP（ModelViewPattern）制御する実践
+
+<img width="960" height="540" alt="vt2_lesson04-2_20261102" src="https://github.com/user-attachments/assets/3bb12b0a-5e1e-4559-8ecf-f76459536abd" />
 
 ## 2026-10-19 Update.
 ### オートマトンでの状態遷移の実装
